@@ -54,8 +54,11 @@ class FunctionType extends DartType implements ParameterizedType {
   ///
   /// A generic function/method can be specified through [typeArguments].
   ///
-  /// Both required and optional parameters need to provide both a name and
-  /// a type.
+  /// Required and optional parameters need to have a name and corresponding
+  /// type for each parameter. For required parameters these are set in
+  /// [requiredParameterNames] and [requiredParameterTypes]. For optional
+  /// parameters [optionalParameterNames] and [optionalParameterTypes] are
+  /// used.
   ///
   /// Named parameters are specified in [namedParameterTypes] where the key is
   /// the variable name and the value is the type.
