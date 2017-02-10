@@ -9,4 +9,6 @@
 
 export 'interfaces/annotated.dart';
 export 'interfaces/commented.dart';
+export 'interfaces/defaults.dart';
 export 'interfaces/named.dart';
+export 'interfaces/typed.dart';
