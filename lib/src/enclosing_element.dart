@@ -32,7 +32,8 @@ class EnclosingElement implements Element {
   /// Marks the [element] as enclosed by `this`.
   @protected
   void enclose(EnclosedElement element) {
-    assert(element._enclosingElement == null, 'An element can only be enclosed once');
+    assert(element._enclosingElement == null,
+        'An element can only be enclosed once');
 
     element._enclosingElement = this;
   }

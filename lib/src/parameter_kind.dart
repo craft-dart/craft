@@ -11,10 +11,12 @@
 enum ParameterKind {
   /// The parameter is required.
   required,
+
   /// The parameter is positional.
   ///
   /// It uses the \[\] syntax when declared.
   positional,
+
   /// The parameter is named.
   ///
   /// It uses the {} syntax when declared.
