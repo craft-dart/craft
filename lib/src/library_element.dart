@@ -9,8 +9,8 @@
 
 import 'element.dart';
 import 'enclosing_element.dart';
-import 'uri_referenced_element.dart';
 import 'helpers.dart';
+import 'uri_referenced_element.dart';
 
 //---------------------------------------------------------------------
 // Library contents
