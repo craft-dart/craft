@@ -7,7 +7,7 @@
 // Imports
 //---------------------------------------------------------------------
 
-import 'element.dart';
+import 'base_element.dart';
 import 'enclosing_element.dart';
 import 'helpers.dart';
 import 'uri_referenced_element.dart';
@@ -16,14 +16,11 @@ import 'uri_referenced_element.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-/// An [Element] representing a Dart library.
-class LibraryElement extends Element with EnclosingElement {
+/// An element representing a Dart library.
+class LibraryElement extends BaseElement with EnclosingElement {
   //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
-
-  /// The name of the element.
-  final String name;
 
   /// The location of the library.
   final Uri uri;
@@ -52,10 +49,12 @@ class LibraryElement extends Element with EnclosingElement {
     String name,
     Iterable<UriReferencedElement> imports,
     Iterable<UriReferencedElement> exports,
+    Iterable annotations,
+    String comments,
   })
-      : name = name ?? '',
-        imports = defaultList<UriReferencedElement>(imports),
-        exports = defaultList<UriReferencedElement>(exports) {
+      : imports = defaultList<UriReferencedElement>(imports),
+        exports = defaultList<UriReferencedElement>(exports),
+        super(name ?? '', annotations, comments) {
     // Use `this` to properly scope the value
     encloseAll(this.imports);
     encloseAll(this.exports);
