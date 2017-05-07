@@ -10,6 +10,7 @@ library craft_element.element;
 //---------------------------------------------------------------------
 
 export 'src/base_element.dart';
+export 'src/class_element.dart';
 export 'src/constructor_element.dart';
 export 'src/element.dart';
 export 'src/enclosing_element.dart';
