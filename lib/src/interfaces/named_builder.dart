@@ -8,15 +8,33 @@
 //---------------------------------------------------------------------
 
 import 'package:craft_element/element.dart';
+import 'package:meta/meta.dart';
 
 import '../element_builder.dart';
+import '../invalid_element_error.dart';
 
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
 
 /// An interface for [ElementBuilder]s that build [Named] elements.
-abstract class NamedBuilder implements ElementBuilder<Named> {
+abstract class NamedBuilder<T extends Named> implements ElementBuilder<T> {
+  //---------------------------------------------------------------------
+  // Member variables
+  //---------------------------------------------------------------------
+
   /// The name of the element being built.
   String name = '';
+
+  //---------------------------------------------------------------------
+  // Validation
+  //---------------------------------------------------------------------
+
+  /// Validates the name of the element.
+  @protected
+  void validateName() {
+    if (name.isEmpty) {
+      throw new InvalidElementError('Element has no name');
+    }
+  }
 }
