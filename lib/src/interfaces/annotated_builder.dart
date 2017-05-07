@@ -16,7 +16,8 @@ import '../element_builder.dart';
 //---------------------------------------------------------------------
 
 /// An interface for [ElementBuilder]s that build [Annotated] elements.
-abstract class AnnotatedBuilder implements ElementBuilder<Annotated> {
+abstract class AnnotatedBuilder<T extends Annotated>
+    implements ElementBuilder<T> {
   /// The list of annotations for the element being built.
   List annotations = [];
 }

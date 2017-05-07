@@ -17,7 +17,8 @@ import '../element_builder.dart';
 //---------------------------------------------------------------------
 
 /// An interface for [ElementBuilder]s that build [Commented] elements.
-abstract class CommentedBuilder implements ElementBuilder<Constant> {
+abstract class CommentedBuilder<T extends Commented>
+    implements ElementBuilder<T> {
   /// The documentation comments describing the [Element].
   CommentBuffer comments = new CommentBuffer();
 }
