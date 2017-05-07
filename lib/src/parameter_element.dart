@@ -18,8 +18,8 @@ import 'parameter_kind.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-/// Contains metadata for a parameter on a function or method.
-class ParameterMetadata extends BaseElement
+/// An element representing a parameter on a function or method.
+class ParameterElement extends BaseElement
     with EnclosedElement
     implements Defaults, Typed {
   //---------------------------------------------------------------------
@@ -59,13 +59,13 @@ class ParameterMetadata extends BaseElement
   // Construction
   //---------------------------------------------------------------------
 
-  /// Creates an instance of [ParameterMetadata] with the given [name] and
+  /// Creates an instance of [ParameterElement] with the given [name] and
   /// accepting the given [type].
   ///
   /// By default the [parameterKind] is set to required. If the parameter is
   /// optional then [defaultValue] should be set unless null is desired for the
   /// default value.
-  ParameterMetadata(
+  ParameterElement(
     String name, {
     DartType type,
     this.parameterKind: ParameterKind.required,
