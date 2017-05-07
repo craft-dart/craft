@@ -8,4 +8,5 @@
 //---------------------------------------------------------------------
 
 export 'interfaces/annotated_builder.dart';
+export 'interfaces/commented_builder.dart';
 export 'interfaces/named_builder.dart';
