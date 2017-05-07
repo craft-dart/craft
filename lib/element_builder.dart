@@ -9,4 +9,5 @@ library craft_element.element_builder;
 // Exports
 //---------------------------------------------------------------------
 
+export 'src/element_builder.dart';
 export 'src/invalid_element_error.dart';
