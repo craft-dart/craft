@@ -52,7 +52,7 @@ class BaseElement extends Element implements Annotated, Commented, Named {
   /// annotations that have been constructed.
   ///
   /// Any code [comments] are present in that value.
-  BaseElement(this.name, List annotations, String comments)
+  BaseElement(this.name, Iterable annotations, String comments)
       : annotations = defaultList(annotations),
         comments = comments ?? '';
 }
