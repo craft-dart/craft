@@ -7,8 +7,13 @@
 // Exports
 //---------------------------------------------------------------------
 
+export 'interfaces/abstract.dart';
+export 'interfaces/accessible.dart';
 export 'interfaces/annotated.dart';
 export 'interfaces/commented.dart';
+export 'interfaces/constant.dart';
 export 'interfaces/defaults.dart';
+export 'interfaces/generic.dart';
 export 'interfaces/named.dart';
+export 'interfaces/static.dart';
 export 'interfaces/typed.dart';
