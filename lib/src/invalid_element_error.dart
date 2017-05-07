@@ -14,6 +14,5 @@
 /// valid for a Dart program then the [InvalidElementError] will be thrown.
 class InvalidElementError extends StateError {
   /// Creates an instance of the [InvalidElementError] class.
-  InvalidElementError(String message)
-      : super(message);
+  InvalidElementError(String message) : super(message);
 }
