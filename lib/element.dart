@@ -13,6 +13,7 @@ export 'src/base_element.dart';
 export 'src/constructor_element.dart';
 export 'src/element.dart';
 export 'src/enclosing_element.dart';
+export 'src/field_element.dart';
 export 'src/function_element.dart';
 export 'src/interfaces.dart';
 export 'src/library_element.dart';
