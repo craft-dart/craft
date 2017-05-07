@@ -38,7 +38,7 @@ abstract class ElementBuilder<T extends Element> {
 
   /// Validates the metadata being built.
   @protected
-  void validate();
+  void validate() {}
 
   /// Creates the [Element] instance.
   T buildInternal();
