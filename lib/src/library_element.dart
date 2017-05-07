@@ -8,8 +8,12 @@
 //---------------------------------------------------------------------
 
 import 'base_element.dart';
+import 'class_element.dart';
 import 'enclosing_element.dart';
+import 'field_element.dart';
+import 'function_element.dart';
 import 'helpers.dart';
+import 'typedef_element.dart';
 import 'uri_referenced_element.dart';
 
 //---------------------------------------------------------------------
@@ -31,6 +35,18 @@ class LibraryElement extends BaseElement with EnclosingElement {
   /// The export references for the library.
   final List<UriReferencedElement> exports;
 
+  /// The classes contained within the library.
+  final List<ClassElement> classes;
+
+  /// The fields contained within the library.
+  final List<FieldElement> fields;
+
+  /// The functions contained within the library.
+  final List<FunctionElement> functions;
+
+  /// The function type definitions contained within the library.
+  final List<TypedefElement> typedefs;
+
   //---------------------------------------------------------------------
   // Construction
   //---------------------------------------------------------------------
@@ -49,15 +65,28 @@ class LibraryElement extends BaseElement with EnclosingElement {
     String name,
     Iterable<UriReferencedElement> imports,
     Iterable<UriReferencedElement> exports,
+    Iterable<ClassElement> classes,
+    Iterable<FieldElement> fields,
+    Iterable<FunctionElement> functions,
+    Iterable<TypedefElement> typedefs,
     Iterable annotations,
     String comments,
   })
       : imports = defaultList<UriReferencedElement>(imports),
         exports = defaultList<UriReferencedElement>(exports),
+        classes = defaultList<ClassElement>(classes),
+        fields = defaultList<FieldElement>(fields),
+        functions = defaultList<FunctionElement>(functions),
+        typedefs = defaultList<TypedefElement>(typedefs),
         super(name ?? '', annotations, comments) {
     // Use `this` to properly scope the value
     encloseAll(this.imports);
     encloseAll(this.exports);
+
+    encloseAll(this.classes);
+    encloseAll(this.fields);
+    encloseAll(this.functions);
+    encloseAll(this.typedefs);
   }
 
   //---------------------------------------------------------------------
