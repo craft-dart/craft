@@ -57,15 +57,14 @@ class FunctionElement extends BaseElement
     String name,
     List<GenericType> typeParameters,
     DartType returnType,
-    List<ParameterElement> parameters,
+    this.parameters,
     Iterable annotations,
     String comments,
   )
-      : parameters = parameters,
-        type = _functionType(typeParameters, returnType, parameters),
+      : type = _functionType(typeParameters, returnType, parameters),
         super(name, annotations, comments) {
-    // Use `this` to properly scope the value
-    encloseAll(this.parameters);
+    // Using `this` is not needed as `this.parameters` is already present
+    encloseAll(parameters);
   }
 
   //---------------------------------------------------------------------
