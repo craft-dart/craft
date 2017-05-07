@@ -13,3 +13,4 @@ export 'src/comment_buffer.dart';
 export 'src/element_builder.dart';
 export 'src/invalid_element_error.dart';
 export 'src/parameter_element_builder.dart';
+export 'src/uri_configuration_element_builder.dart';
