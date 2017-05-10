@@ -13,4 +13,5 @@ export 'interfaces/commented_builder.dart';
 export 'interfaces/defaults_builder.dart';
 export 'interfaces/generic_builder.dart';
 export 'interfaces/named_builder.dart';
+export 'interfaces/static_builder.dart';
 export 'interfaces/typed_builder.dart';
