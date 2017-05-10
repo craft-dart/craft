@@ -16,6 +16,7 @@ export 'src/element_builder.dart';
 export 'src/field_element_builder.dart';
 export 'src/function_element_builder.dart';
 export 'src/invalid_element_error.dart';
+export 'src/library_element_builder.dart';
 export 'src/method_element_builder.dart';
 export 'src/parameter_element_builder.dart';
 export 'src/typedef_element_builder.dart';
