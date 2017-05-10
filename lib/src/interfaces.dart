@@ -10,6 +10,7 @@
 export 'interfaces/abstract_builder.dart';
 export 'interfaces/annotated_builder.dart';
 export 'interfaces/commented_builder.dart';
+export 'interfaces/constant_builder.dart';
 export 'interfaces/defaults_builder.dart';
 export 'interfaces/generic_builder.dart';
 export 'interfaces/named_builder.dart';
