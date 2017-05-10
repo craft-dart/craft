@@ -19,3 +19,4 @@ export 'src/method_element_builder.dart';
 export 'src/parameter_element_builder.dart';
 export 'src/typedef_element_builder.dart';
 export 'src/uri_configuration_element_builder.dart';
+export 'src/uri_referenced_element_builder.dart';
