@@ -10,6 +10,7 @@ library craft_element.element_builder;
 //---------------------------------------------------------------------
 
 export 'src/comment_buffer.dart';
+export 'src/constructor_element_builder.dart';
 export 'src/element_builder.dart';
 export 'src/function_element_builder.dart';
 export 'src/invalid_element_error.dart';
