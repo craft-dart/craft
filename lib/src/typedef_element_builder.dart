@@ -23,8 +23,7 @@ class TypedefElementBuilder extends FunctionElementBuilder<TypedefElement> {
   //---------------------------------------------------------------------
 
   @override
-  TypedefElement buildInternal() =>
-      new TypedefElement(
+  TypedefElement buildInternal() => new TypedefElement(
         name,
         returnType: returnType,
         parameters: buildElements<ParameterElement>(parameters),
