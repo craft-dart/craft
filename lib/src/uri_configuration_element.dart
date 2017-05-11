@@ -9,6 +9,7 @@
 
 import 'element.dart';
 import 'enclosing_element.dart';
+import 'interfaces.dart';
 import 'library_element.dart';
 
 //---------------------------------------------------------------------
@@ -25,7 +26,9 @@ import 'library_element.dart';
 /// [when] value is queried from the environment and then compared against the
 /// expected [equals] value. If there is a match then the referenced [library]
 /// will be loaded.
-class UriConfigurationElement extends Element with EnclosedElement {
+class UriConfigurationElement extends Element
+    with EnclosedElement
+    implements LibraryReference {
   //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
@@ -38,7 +41,11 @@ class UriConfigurationElement extends Element with EnclosedElement {
   /// This is always a string and by default it is 'true'.
   final String equals;
 
-  /// The library referenced by the configuration.
+  //---------------------------------------------------------------------
+  // LibraryReference
+  //---------------------------------------------------------------------
+
+  @override
   final LibraryElement library;
 
   //---------------------------------------------------------------------

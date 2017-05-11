@@ -10,6 +10,7 @@
 import 'element.dart';
 import 'enclosing_element.dart';
 import 'helpers.dart';
+import 'interfaces.dart';
 import 'library_element.dart';
 import 'uri_configuration_element.dart';
 
@@ -19,7 +20,8 @@ import 'uri_configuration_element.dart';
 
 /// Represents `import` and `export` declarations within a Dart program.
 class UriReferencedElement extends Element
-    with EnclosingElement, EnclosedElement {
+    with EnclosingElement, EnclosedElement
+    implements LibraryReference {
   //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
@@ -36,14 +38,18 @@ class UriReferencedElement extends Element
   /// The names within the library that are hidden.
   final List<String> hiddenNames;
 
-  /// The element for the library being referenced.
-  final LibraryElement library;
-
   /// The configuration specific imports.
   ///
   /// The keys of the map correspond to the if clause for the configuration
   /// with the library metadata being used.
   final List<UriConfigurationElement> configurations;
+
+  //---------------------------------------------------------------------
+  // LibraryReference
+  //---------------------------------------------------------------------
+
+  @override
+  final LibraryElement library;
 
   //---------------------------------------------------------------------
   // Constructors
