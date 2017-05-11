@@ -10,6 +10,7 @@
 import 'package:craft_element/element.dart';
 
 import 'element_builder.dart';
+import 'interfaces.dart';
 import 'uri_configuration_element_builder.dart';
 
 //---------------------------------------------------------------------
@@ -17,7 +18,8 @@ import 'uri_configuration_element_builder.dart';
 //---------------------------------------------------------------------
 
 /// A [ElementBuilder] for [UriReferencedElement]s.
-class UriReferencedElementBuilder extends ElementBuilder<UriReferencedElement> {
+class UriReferencedElementBuilder extends ElementBuilder<UriReferencedElement>
+    with LibraryReferenceBuilder<UriReferencedElement> {
   //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
@@ -45,6 +47,7 @@ class UriReferencedElementBuilder extends ElementBuilder<UriReferencedElement> {
   @override
   UriReferencedElement buildInternal() => new UriReferencedElement(
         prefix: prefix,
+        library: library.build(),
         deferred: deferred,
         shownNames: shownNames,
         hiddenNames: hiddenNames,

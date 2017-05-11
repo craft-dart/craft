@@ -10,6 +10,7 @@
 import 'package:craft_element/element.dart';
 
 import 'element_builder.dart';
+import 'interfaces.dart';
 
 //---------------------------------------------------------------------
 // Library contents
@@ -19,7 +20,8 @@ import 'element_builder.dart';
 ///
 /// No validation is performed on the element.
 class UriConfigurationElementBuilder
-    extends ElementBuilder<UriConfigurationElement> {
+    extends ElementBuilder<UriConfigurationElement>
+    with LibraryReferenceBuilder<UriConfigurationElement> {
   //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
@@ -35,8 +37,11 @@ class UriConfigurationElementBuilder
   //---------------------------------------------------------------------
 
   @override
-  UriConfigurationElement buildInternal() =>
-      new UriConfigurationElement(when, equals: equals);
+  UriConfigurationElement buildInternal() => new UriConfigurationElement(
+        when,
+        equals: equals,
+        library: library.build(),
+      );
 }
 
 /// Creates an instance of [UriConfigurationElementBuilder] with the given
