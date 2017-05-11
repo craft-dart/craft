@@ -20,7 +20,10 @@ import '../matcher.dart';
 
 final Element _publicElement = new MethodElement('foo');
 final Element _privateElement = new MethodElement('_foo');
-final Element _protectedElement = new MethodElement('foo', annotations: [protected],);
+final Element _protectedElement = new MethodElement(
+  'foo',
+  annotations: [protected],
+);
 final Element _notAccessibleElementType = new Element();
 
 void main() {

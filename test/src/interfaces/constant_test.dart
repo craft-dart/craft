@@ -18,8 +18,14 @@ import '../matcher.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-final Element _constantElement = new ConstructorElement(new InterfaceType('Foo'), isConst: true,);
-final Element _notConstantElement = new ConstructorElement(new InterfaceType('Foo'), isConst: false,);
+final Element _constantElement = new ConstructorElement(
+  new InterfaceType('Foo'),
+  isConst: true,
+);
+final Element _notConstantElement = new ConstructorElement(
+  new InterfaceType('Foo'),
+  isConst: false,
+);
 final Element _notConstantElementType = new ParameterElement('param');
 
 void main() {
