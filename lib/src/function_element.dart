@@ -23,7 +23,7 @@ import 'parameter_kind.dart';
 /// An element representing a function.
 class FunctionElement extends BaseElement
     with EnclosedElement, EnclosingElement, Accessible
-    implements Generic, Typed {
+    implements Generic, Typed<FunctionType> {
   //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
