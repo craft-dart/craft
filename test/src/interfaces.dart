@@ -14,6 +14,7 @@ import 'package:test/test.dart';
 import 'interfaces/abstract_test.dart' as abstract_test;
 import 'interfaces/accessible_test.dart' as accessible_test;
 import 'interfaces/constant_test.dart' as constant_test;
+import 'interfaces/named_test.dart' as named_test;
 
 //---------------------------------------------------------------------
 // Library contents
@@ -25,4 +26,5 @@ void main() {
   group('Abstract tests', abstract_test.main);
   group('Accessible tests', accessible_test.main);
   group('Constant tests', constant_test.main);
+  group('Named tests', named_test.main);
 }
