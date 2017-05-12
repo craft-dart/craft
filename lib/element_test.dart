@@ -8,3 +8,4 @@
 //---------------------------------------------------------------------
 
 export 'src/interfaces.dart';
+export 'src/parameter_element_test.dart';
