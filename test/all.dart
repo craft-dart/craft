@@ -12,6 +12,7 @@
 import 'package:test/test.dart';
 
 import 'src/interfaces.dart' as interfaces;
+import 'src/parameter_element_test.dart' as parameter_element_test;
 
 //---------------------------------------------------------------------
 // Library contents
@@ -21,4 +22,5 @@ import 'src/interfaces.dart' as interfaces;
 void main() {
   // Run tests
   group('Interface tests', interfaces.main);
+  group('ParameterElement tests', parameter_element_test.main);
 }
