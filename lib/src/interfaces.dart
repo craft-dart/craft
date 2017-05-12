@@ -12,4 +12,5 @@ export 'interfaces/accessible_test.dart';
 export 'interfaces/constant_test.dart';
 export 'interfaces/defaults_test.dart';
 export 'interfaces/named_test.dart';
+export 'interfaces/static_test.dart';
 export 'interfaces/typed_test.dart';
