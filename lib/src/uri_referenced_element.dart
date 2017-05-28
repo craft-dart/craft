@@ -23,19 +23,6 @@ class UriReferencedElement extends Element
     with EnclosingElement, EnclosedElement
     implements LibraryReference {
   //---------------------------------------------------------------------
-  // Class variables
-  //---------------------------------------------------------------------
-
-  /// Configuration for Dart command line applications.
-  static const String whenIo = 'dart:io';
-
-  /// Configuration for Dart HTML applications.
-  static const String whenHtml = 'dart:html';
-
-  /// Configuration for Flutter applications.
-  static const String whenFlutter = 'dart:ui';
-
-  //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
 
