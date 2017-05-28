@@ -10,6 +10,8 @@
 import 'package:craft_element/element.dart';
 import 'package:test/test.dart';
 
+import 'parameter_element_matcher.dart';
+
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
@@ -17,4 +19,12 @@ import 'package:test/test.dart';
 /// Returns a matcher that checks for equality between [Element]s.
 ///
 /// The metadata matcher is not able to check equality for annotations.
-Matcher elementEqual(Element expected) => null;
+Matcher elementEqual(Element expected) {
+  Matcher matcher;
+
+  if (expected is ParameterElement) {
+    matcher = new ParameterElementMatcher(expected);
+  }
+
+  return matcher;
+}
