@@ -11,9 +11,13 @@
 
 import 'package:test/test.dart';
 
+import 'src/parameter_element_test.dart' as parameter_element_test;
+
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
 
 /// Entry point for tests.
-void main() {}
+void main() {
+  group('ParameterElement', parameter_element_test.main);
+}

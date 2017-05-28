@@ -14,3 +14,5 @@ dependencies:
 
 dev_dependencies:
   test: ^0.12.0
+  craft_element_test:
+    path: ../craft-element-test
