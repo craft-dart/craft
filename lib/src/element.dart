@@ -12,6 +12,7 @@ import 'package:test/test.dart';
 
 import 'parameter_element_matcher.dart';
 import 'uri_configuration_element_matcher.dart';
+import 'uri_referenced_element_matcher.dart';
 
 //---------------------------------------------------------------------
 // Library contents
@@ -25,6 +26,8 @@ Matcher elementEqual(Element expected) {
 
   if (expected is ParameterElement) {
     matcher = new ParameterElementMatcher(expected);
+  } else if (expected is UriReferencedElement) {
+    matcher = new UriReferencedElementMatcher(expected);
   } else if (expected is UriConfigurationElement) {
     matcher = new UriConfigurationElementMatcher(expected);
   }
