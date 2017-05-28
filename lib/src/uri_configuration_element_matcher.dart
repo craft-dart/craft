@@ -35,7 +35,9 @@ class UriConfigurationElementMatcher
   bool matches(dynamic item, Map matchState) {
     final actual = item as UriConfigurationElement;
 
-    return checkField(matchState, 'when', actual.when, expected.when) &&
-        checkField(matchState, 'equals', actual.equals, expected.equals);
+    checkField(matchState, 'when', actual.when, expected.when);
+    checkField(matchState, 'equals', actual.equals, expected.equals);
+
+    return matchState.isNotEmpty;
   }
 }

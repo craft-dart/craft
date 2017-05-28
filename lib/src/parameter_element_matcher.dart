@@ -31,15 +31,14 @@ class ParameterElementMatcher extends BaseElementMatcher<ParameterElement> {
 
   @override
   bool matches(dynamic item, Map matchState) {
-    var matched = super.matches(item, matchState);
     final actual = item as ParameterElement;
 
-    matched = checkField(matchState, 'type', actual.type, expected.type) && matched;
-    matched = checkField(matchState, 'parameterKind', actual.parameterKind, expected.parameterKind) && matched;
-    matched = checkField(matchState, 'isInitializer', actual.isInitializer, expected.isInitializer) && matched;
-    matched = checkField(matchState, 'isCovariant', actual.isCovariant, expected.isCovariant) && matched;
-    matched = checkField(matchState, 'defaultValue', actual.defaultValue, expected.defaultValue) && matched;
+    checkField(matchState, 'type', actual.type, expected.type);
+    checkField(matchState, 'parameterKind', actual.parameterKind, expected.parameterKind);
+    checkField(matchState, 'isInitializer', actual.isInitializer, expected.isInitializer);
+    checkField(matchState, 'isCovariant', actual.isCovariant, expected.isCovariant);
+    checkField(matchState, 'defaultValue', actual.defaultValue, expected.defaultValue);
 
-    return matched;
+    return matchState.isNotEmpty;
   }
 }
