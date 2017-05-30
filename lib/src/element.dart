@@ -13,6 +13,7 @@ import 'package:test/test.dart';
 import 'function_element_matcher.dart';
 import 'method_element_matcher.dart';
 import 'parameter_element_matcher.dart';
+import 'typedef_element_matcher.dart';
 import 'uri_configuration_element_matcher.dart';
 import 'uri_referenced_element_matcher.dart';
 
@@ -30,6 +31,8 @@ Matcher elementEqual(Element expected) {
     matcher = new ParameterElementMatcher(expected);
   } else if (expected is MethodElement) {
     matcher = new MethodElementMatcher(expected);
+  } else if (expected is TypedefElement) {
+    matcher = new TypedefElementMatcher(expected);
   } else if (expected is FunctionElement) {
     matcher = new FunctionElementMatcher(expected);
   } else if (expected is UriReferencedElement) {
