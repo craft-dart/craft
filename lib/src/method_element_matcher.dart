@@ -35,7 +35,12 @@ class MethodElementMatcher extends FunctionElementMatcher<MethodElement> {
 
     final actual = item as MethodElement;
 
-    checkField(matchState, 'isAbstract', actual.isAbstract, expected.isAbstract);
+    checkField(
+      matchState,
+      'isAbstract',
+      actual.isAbstract,
+      expected.isAbstract,
+    );
     checkField(matchState, 'isStatic', actual.isStatic, expected.isStatic);
 
     return matchState.isNotEmpty;

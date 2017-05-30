@@ -16,7 +16,8 @@ import 'base_element_matcher.dart';
 //---------------------------------------------------------------------
 
 /// A [BaseElementMatcher] for [FunctionElement] equality.
-class FunctionElementMatcher<T extends FunctionElement> extends BaseElementMatcher<T> {
+class FunctionElementMatcher<T extends FunctionElement>
+    extends BaseElementMatcher<T> {
   //---------------------------------------------------------------------
   // Construction
   //---------------------------------------------------------------------
@@ -36,7 +37,12 @@ class FunctionElementMatcher<T extends FunctionElement> extends BaseElementMatch
     final actual = item as FunctionElement;
 
     checkField(matchState, 'type', actual.type, expected.type);
-    checkOrderedList(matchState, 'parameters', actual.parameters, expected.parameters);
+    checkOrderedList(
+      matchState,
+      'parameters',
+      actual.parameters,
+      expected.parameters,
+    );
 
     return matchState.isNotEmpty;
   }

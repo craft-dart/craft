@@ -36,10 +36,30 @@ class ParameterElementMatcher extends BaseElementMatcher<ParameterElement> {
     final actual = item as ParameterElement;
 
     checkField(matchState, 'type', actual.type, expected.type);
-    checkField(matchState, 'parameterKind', actual.parameterKind, expected.parameterKind);
-    checkField(matchState, 'isInitializer', actual.isInitializer, expected.isInitializer);
-    checkField(matchState, 'isCovariant', actual.isCovariant, expected.isCovariant);
-    checkField(matchState, 'defaultValue', actual.defaultValue, expected.defaultValue);
+    checkField(
+      matchState,
+      'parameterKind',
+      actual.parameterKind,
+      expected.parameterKind,
+    );
+    checkField(
+      matchState,
+      'isInitializer',
+      actual.isInitializer,
+      expected.isInitializer,
+    );
+    checkField(
+      matchState,
+      'isCovariant',
+      actual.isCovariant,
+      expected.isCovariant,
+    );
+    checkField(
+      matchState,
+      'defaultValue',
+      actual.defaultValue,
+      expected.defaultValue,
+    );
 
     return matchState.isNotEmpty;
   }

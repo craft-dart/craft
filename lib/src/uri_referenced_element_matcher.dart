@@ -23,8 +23,7 @@ class UriReferencedElementMatcher extends ElementMatcher<UriReferencedElement> {
 
   /// Creates an instance of [UriReferencedElementMatcher] which compares
   /// metadata using the values in [expected].
-  UriReferencedElementMatcher(UriReferencedElement expected)
-      : super(expected);
+  UriReferencedElementMatcher(UriReferencedElement expected) : super(expected);
 
   //---------------------------------------------------------------------
   // Matcher
@@ -36,9 +35,24 @@ class UriReferencedElementMatcher extends ElementMatcher<UriReferencedElement> {
 
     checkField(matchState, 'prefix', actual.prefix, expected.prefix);
     checkField(matchState, 'deferred', actual.deferred, expected.deferred);
-    checkUnorderedList(matchState, 'shownNames', actual.shownNames, expected.shownNames);
-    checkUnorderedList(matchState, 'hiddenNames', actual.hiddenNames, expected.hiddenNames);
-    checkUnorderedList(matchState, 'configurations', actual.configurations, expected.configurations);
+    checkUnorderedList(
+      matchState,
+      'shownNames',
+      actual.shownNames,
+      expected.shownNames,
+    );
+    checkUnorderedList(
+      matchState,
+      'hiddenNames',
+      actual.hiddenNames,
+      expected.hiddenNames,
+    );
+    checkUnorderedList(
+      matchState,
+      'configurations',
+      actual.configurations,
+      expected.configurations,
+    );
 
     return matchState.isNotEmpty;
   }
