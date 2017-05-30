@@ -16,14 +16,14 @@ import 'base_element_matcher.dart';
 //---------------------------------------------------------------------
 
 /// A [BaseElementMatcher] for [FunctionElement] equality.
-class FunctionElementMatcher extends BaseElementMatcher<FunctionElement> {
+class FunctionElementMatcher<T extends FunctionElement> extends BaseElementMatcher<T> {
   //---------------------------------------------------------------------
   // Construction
   //---------------------------------------------------------------------
 
   /// Creates an instance of [FunctionElementMatcher] which compares metadata
   /// using the values in [expected].
-  FunctionElementMatcher(FunctionElement expected) : super(expected);
+  FunctionElementMatcher(T expected) : super(expected);
 
   //---------------------------------------------------------------------
   // Matcher
@@ -31,6 +31,8 @@ class FunctionElementMatcher extends BaseElementMatcher<FunctionElement> {
 
   @override
   bool matches(dynamic item, Map matchState) {
+    super.matches(item, matchState);
+
     final actual = item as FunctionElement;
 
     checkField(matchState, 'type', actual.type, expected.type);
