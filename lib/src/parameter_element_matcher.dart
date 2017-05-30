@@ -31,6 +31,8 @@ class ParameterElementMatcher extends BaseElementMatcher<ParameterElement> {
 
   @override
   bool matches(dynamic item, Map matchState) {
+    super.matches(item, matchState);
+
     final actual = item as ParameterElement;
 
     checkField(matchState, 'type', actual.type, expected.type);
