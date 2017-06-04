@@ -41,8 +41,6 @@ class EnclosingElement implements Element {
   /// Marks all the [elements] as enclosed by `this`.
   @protected
   void encloseAll(Iterable<EnclosedElement> elements) {
-    for (var element in elements) {
-      enclose(element);
-    }
+    elements.forEach(enclose);
   }
 }
