@@ -3,6 +3,7 @@ set -ex
 
 # Clone unpublished craft-dart packages
 git clone https://github.com/craft-dart/craft-type.git ../craft-type
+git clone https://github.com/craft-dart/craft-element-test.git ../craft-element-test
 
 # Get version
 dart --version
