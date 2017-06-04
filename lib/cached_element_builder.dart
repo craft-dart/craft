@@ -56,11 +56,7 @@ class CachedElementBuilder<T extends Element> implements ElementBuilder<T> {
   //---------------------------------------------------------------------
 
   @override
-  T build() {
-    _element ??= _builder.build();
-
-    return _element;
-  }
+  T build() => _element ??= _builder.build();
 
   //---------------------------------------------------------------------
   // Object
