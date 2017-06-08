@@ -11,7 +11,11 @@
 
 import 'package:test/test.dart';
 
+import 'src/constructor_element_test.dart' as constructor_element_test;
+import 'src/function_element_test.dart' as function_element_test;
+import 'src/method_element_test.dart' as method_element_test;
 import 'src/parameter_element_test.dart' as parameter_element_test;
+import 'src/uri_referenced_element_test.dart' as uri_referenced_element_test;
 
 //---------------------------------------------------------------------
 // Library contents
@@ -19,5 +23,9 @@ import 'src/parameter_element_test.dart' as parameter_element_test;
 
 /// Entry point for tests.
 void main() {
+  group('ConstructorElement', constructor_element_test.main);
+  group('FunctionElement', function_element_test.main);
+  group('MethodElement', method_element_test.main);
   group('ParameterElement', parameter_element_test.main);
+  group('UriReferencedElement', uri_referenced_element_test.main);
 }
