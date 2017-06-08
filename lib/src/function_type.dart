@@ -7,14 +7,22 @@
 // Imports
 //---------------------------------------------------------------------
 
+import 'package:collection/collection.dart';
+import 'package:quiver/core.dart';
+
 import 'dart_type.dart';
-import 'parameterized_type.dart';
 import 'helpers.dart';
 import 'interface_types.dart';
+import 'parameterized_type.dart';
 
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
+
+/// Equality check for [List]s.
+const ListEquality _list = const ListEquality();
+/// Equality check for [Map]s.
+const MapEquality _map = const MapEquality();
 
 /// A type that references a function.
 class FunctionType extends DartType implements ParameterizedType {
@@ -78,4 +86,31 @@ class FunctionType extends DartType implements ParameterizedType {
         optionalParameterNames = defaultList<String>(optionalParameterNames),
         optionalParameterTypes = defaultList<DartType>(optionalParameterTypes),
         namedParameterTypes = defaultMap<String, DartType>(namedParameterTypes);
+
+  //---------------------------------------------------------------------
+  // Object
+  //---------------------------------------------------------------------
+
+  @override
+  // ignore: type_annotate_public_apis
+  bool operator ==(other) =>
+      other is FunctionType &&
+      _list.equals(other.typeArguments, typeArguments) &&
+      other.returnType == returnType &&
+      _list.equals(other.requiredParameterNames, requiredParameterNames) &&
+      _list.equals(other.requiredParameterTypes, requiredParameterTypes) &&
+      _list.equals(other.optionalParameterNames, optionalParameterNames) &&
+      _list.equals(other.optionalParameterTypes, optionalParameterTypes) &&
+      _map.equals(other.namedParameterTypes, namedParameterTypes);
+
+  @override
+  int get hashCode => hashObjects([
+        _list.hash(typeArguments),
+        returnType.hashCode,
+        _list.hash(requiredParameterNames),
+        _list.hash(requiredParameterTypes),
+        _list.hash(optionalParameterNames),
+        _list.hash(optionalParameterTypes),
+        _map.hash(namedParameterTypes),
+      ]);
 }

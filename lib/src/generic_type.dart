@@ -7,6 +7,8 @@
 // Imports
 //---------------------------------------------------------------------
 
+import 'package:quiver/core.dart';
+
 import 'dart_type.dart';
 import 'interface_type.dart';
 import 'named_type.dart';
@@ -35,4 +37,18 @@ class GenericType extends DartType implements NamedType {
   ///
   /// If [extending] is provided the generic will always be of that type.
   GenericType(this.name, [this.extending]);
+
+  //---------------------------------------------------------------------
+  // Object
+  //---------------------------------------------------------------------
+
+  @override
+  // ignore: type_annotate_public_apis
+  bool operator ==(other) =>
+      other is GenericType &&
+      other.name == name &&
+      other.extending == extending;
+
+  @override
+  int get hashCode => hash2(name.hashCode, extending.hashCode);
 }
