@@ -18,12 +18,17 @@ import 'package:test/test.dart';
 const Matcher isUriConfigurationElement =
     const isInstanceOf<UriConfigurationElement>();
 
-/// Matches the [expected] value of when on a [UriConfigurationElement].
-Matcher useWhen(String expected) => predicate((value) {
+/// Matches the [when] value on a [UriConfigurationElement].
+///
+/// Additionally the [equals] field can be checked. By default `true` is used
+/// which is the default for a configuration.
+Matcher useWhen(String when, [String equals = 'true']) => predicate((value) {
       if (value is! UriConfigurationElement) return false;
 
-      return (value as UriConfigurationElement).when == expected;
-    }, 'configured when $expected');
+      final configValue = value as UriConfigurationElement;
+
+      return configValue.when == when && configValue.equals == equals;
+    }, 'configured when $when equals $equals');
 
 /// Matches a configuration for `dart:io` applications.
 final Matcher useWhenIo = useWhen(UriConfigurationElement.whenIo);
@@ -33,10 +38,3 @@ final Matcher useWhenHtml = useWhen(UriConfigurationElement.whenHtml);
 
 /// Matches a configuration for `dart:ui` applications.
 final Matcher useWhenFlutter = useWhen(UriConfigurationElement.whenFlutter);
-
-/// Matches the [expected] value of equals on a [UriConfigurationElement].
-Matcher useWhenEquals(String expected) => predicate((value) {
-      if (value is! UriConfigurationElement) return false;
-
-      return (value as UriConfigurationElement).equals == expected;
-    }, 'configured when equals $expected');
