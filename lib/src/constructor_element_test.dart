@@ -29,4 +29,18 @@ final Matcher isNotFactory = predicate((value) {
   if (value is! ConstructorElement) return false;
 
   return !(value as ConstructorElement).isFactory;
-}, 'parameter is not covariant');
+}, 'not a factory constructor');
+
+/// Matcher for [ConstructorElement]s that are default constructors.
+final Matcher isDefaultConstructor = predicate((value) {
+  if (value is! ConstructorElement) return false;
+
+  return (value as ConstructorElement).name.isEmpty;
+}, 'default constructor');
+
+/// Matcher for [ConstructorElement]s that are named constructors.
+final Matcher isNamedConstructor = predicate((value) {
+  if (value is! ConstructorElement) return false;
+
+  return (value as ConstructorElement).name.isNotEmpty;
+}, 'default constructor');
