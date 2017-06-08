@@ -23,15 +23,21 @@ import 'parameterized_type.dart';
 const ListEquality _list = const ListEquality();
 
 /// A type that references a class.
-class InterfaceType extends DartType implements NamedType, ParameterizedType {
+class InterfaceType<T extends DartType> extends DartType
+    implements NamedType, ParameterizedType<T> {
   //---------------------------------------------------------------------
-  // Member variables
+  // NamedType
   //---------------------------------------------------------------------
 
   @override
   final String name;
+
+  //---------------------------------------------------------------------
+  // ParameterizedType
+  //---------------------------------------------------------------------
+
   @override
-  final List<DartType> typeArguments;
+  final List<T> typeArguments;
 
   //---------------------------------------------------------------------
   // Construction
@@ -40,8 +46,8 @@ class InterfaceType extends DartType implements NamedType, ParameterizedType {
   /// Creates a new [InterfaceType] with the given [name].
   ///
   /// If [typeArguments] are provided the type represents a generic type.
-  InterfaceType(this.name, [Iterable<DartType> typeArguments])
-      : typeArguments = defaultList<DartType>(typeArguments);
+  InterfaceType(this.name, [Iterable<T> typeArguments])
+      : typeArguments = defaultList<T>(typeArguments);
 
   //---------------------------------------------------------------------
   // Object

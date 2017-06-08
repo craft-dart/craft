@@ -64,45 +64,45 @@ const String _streamName = 'Stream';
 ///
 /// A type [argument] can be provided for additional type information. If it is
 /// not specified the type is `List<dynamic>`.
-InterfaceType listType([DartType argument]) =>
-    new InterfaceType(_listName, _defaultArgumentList(argument));
+InterfaceType<T> listType<T extends DartType>([T argument]) =>
+    new InterfaceType<T>(_listName, _defaultArgumentList<T>(argument));
 
 /// Creates an instance of [InterfaceType] representing an iterable.
 ///
 /// A type [argument] can be provided for additional type information. If it is
 /// not specified the type is `Iterable<dynamic>`.
-InterfaceType iterableType([DartType argument]) =>
-    new InterfaceType(_iterableName, _defaultArgumentList(argument));
+InterfaceType<T> iterableType<T extends DartType>([T argument]) =>
+    new InterfaceType<T>(_iterableName, _defaultArgumentList<T>(argument));
 
 /// Creates an instance of [InterfaceType] representing a map.
 ///
 /// A type for the [key] and/or [value] can be provided for addition type
 /// information. If it is not specified the key and value type arguments
 /// default to [dynamicType].
-InterfaceType mapType({DartType key, DartType value}) {
-  key ??= dynamicType;
-  value ??= dynamicType;
+InterfaceType<T> mapType<T extends DartType>({T key, T value}) {
+  key ??= dynamicType as T;
+  value ??= dynamicType as T;
 
-  return new InterfaceType('Map', <DartType>[key, value]);
+  return new InterfaceType<T>('Map', <T>[key, value]);
 }
 
 /// Creates an instance of [InterfaceType] representing a future.
 ///
 /// A type [argument] can be provided for additional type information. If it is
 /// not specified the type is `Future<dynamic>`.
-InterfaceType futureType([DartType argument]) =>
-    new InterfaceType(_futureName, _defaultArgumentList(argument));
+InterfaceType<T> futureType<T extends DartType>([T argument]) =>
+    new InterfaceType<T>(_futureName, _defaultArgumentList<T>(argument));
 
 /// Creates an instance of [InterfaceType] representing a stream.
 ///
 /// A type [argument] can be provided for additional type information. If it is
 /// not specified the type is `Future<dynamic>`.
-InterfaceType streamType([DartType argument]) =>
-    new InterfaceType(_streamName, _defaultArgumentList(argument));
+InterfaceType<T> streamType<T extends DartType>([T argument]) =>
+    new InterfaceType<T>(_streamName, _defaultArgumentList<T>(argument));
 
 /// Creates a default argument list for a type with a single type [argument].
-List<DartType> _defaultArgumentList(DartType argument) =>
-    <DartType>[argument ?? dynamicType];
+List<T> _defaultArgumentList<T extends DartType>(T argument) =>
+    <T>[argument ?? dynamicType as T];
 
 //---------------------------------------------------------------------
 // Type checks

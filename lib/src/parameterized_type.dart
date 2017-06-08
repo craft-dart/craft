@@ -14,7 +14,7 @@ import 'dart_type.dart';
 //---------------------------------------------------------------------
 
 /// A type that contains parameters.
-abstract class ParameterizedType implements DartType {
+abstract class ParameterizedType<T extends DartType> implements DartType {
   /// The arguments for the type.
-  List<DartType> get typeArguments;
+  List<T> get typeArguments;
 }

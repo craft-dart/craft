@@ -21,17 +21,23 @@ import 'parameterized_type.dart';
 
 /// Equality check for [List]s.
 const ListEquality _list = const ListEquality();
+
 /// Equality check for [Map]s.
 const MapEquality _map = const MapEquality();
 
 /// A type that references a function.
-class FunctionType extends DartType implements ParameterizedType {
+class FunctionType<T extends DartType> extends DartType
+    implements ParameterizedType<T> {
   //---------------------------------------------------------------------
-  // Member variables
+  // ParameterizedType
   //---------------------------------------------------------------------
 
   @override
-  final List<DartType> typeArguments;
+  final List<T> typeArguments;
+
+  //---------------------------------------------------------------------
+  // Member variables
+  //---------------------------------------------------------------------
 
   /// The return type of the function.
   final DartType returnType;
@@ -71,7 +77,7 @@ class FunctionType extends DartType implements ParameterizedType {
   /// Named parameters are specified in [namedParameterTypes] where the key is
   /// the variable name and the value is the type.
   FunctionType({
-    Iterable<DartType> typeArguments,
+    Iterable<T> typeArguments,
     DartType returnType,
     Iterable<String> requiredParameterNames,
     Iterable<DartType> requiredParameterTypes,
@@ -79,7 +85,7 @@ class FunctionType extends DartType implements ParameterizedType {
     Iterable<DartType> optionalParameterTypes,
     Map<String, DartType> namedParameterTypes,
   })
-      : typeArguments = defaultList<DartType>(typeArguments),
+      : typeArguments = defaultList<T>(typeArguments),
         returnType = returnType ?? dynamicType,
         requiredParameterNames = defaultList<String>(requiredParameterNames),
         requiredParameterTypes = defaultList<DartType>(requiredParameterTypes),

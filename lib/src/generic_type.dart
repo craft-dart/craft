@@ -20,11 +20,15 @@ import 'named_type.dart';
 /// A type that references a generic.
 class GenericType extends DartType implements NamedType {
   //---------------------------------------------------------------------
-  // Member variables
+  // NamedType
   //---------------------------------------------------------------------
 
   @override
   final String name;
+
+  //---------------------------------------------------------------------
+  // Member variables
+  //---------------------------------------------------------------------
 
   /// The interface that the generic extends from.
   final InterfaceType extending;
