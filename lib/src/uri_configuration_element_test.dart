@@ -25,9 +25,13 @@ Matcher useWhen(String expected) => predicate((value) {
       return (value as UriConfigurationElement).when == expected;
     }, 'configured when $expected');
 
-/// Matches a configuration for
+/// Matches a configuration for `dart:io` applications.
 final Matcher useWhenIo = useWhen(UriConfigurationElement.whenIo);
+
+/// Matches a configuration for `dart:html` applications.
 final Matcher useWhenHtml = useWhen(UriConfigurationElement.whenHtml);
+
+/// Matches a configuration for `dart:ui` applications.
 final Matcher useWhenFlutter = useWhen(UriConfigurationElement.whenFlutter);
 
 /// Matches the [expected] value of equals on a [UriConfigurationElement].
