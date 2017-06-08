@@ -18,6 +18,8 @@ import 'package:test/test.dart';
 const Matcher isConstantElement = const isInstanceOf<Constant>();
 
 /// A matcher for constant metadata.
+///
+/// Checks if the value of [Constant.isConst] is [true].
 final Matcher isConstant = predicate((value) {
   if (value is! Constant) return false;
 
@@ -25,6 +27,8 @@ final Matcher isConstant = predicate((value) {
 }, 'element is constant');
 
 /// A matcher for variable metadata.
+///
+/// Checks if the value of [Constant.isConst] is [false].
 final Matcher isNotConstant = predicate((value) {
   if (value is! Constant) return true;
 
