@@ -11,6 +11,7 @@
 
 import 'package:test/test.dart';
 
+import 'src/function_type_test.dart' as function_type_test;
 import 'src/generic_type_test.dart' as generic_type_test;
 import 'src/interface_type_test.dart' as interface_type_test;
 import 'src/interface_types_test.dart' as interface_types_test;
@@ -21,6 +22,7 @@ import 'src/interface_types_test.dart' as interface_types_test;
 
 /// Entry point for tests.
 void main() {
+  group('FunctionType', function_type_test.main);
   group('GenericType', generic_type_test.main);
   group('InterfaceType', interface_type_test.main);
   group('Interface types', interface_types_test.main);
