@@ -117,10 +117,10 @@ Matcher hidesName(String name) => predicate((value) {
 
 /// Matches [UriReferencedElement]s with [length] configurations.
 Matcher configurationsHasLength(int length) => predicate((value) {
-  if (value is! UriReferencedElement) return false;
+      if (value is! UriReferencedElement) return false;
 
-  return (value as UriReferencedElement).hiddenNames.length == length;
-}, 'element has $length configurations');
+      return (value as UriReferencedElement).hiddenNames.length == length;
+    }, 'element has $length configurations');
 
 /// A matcher for [UriReferencedElement]s that do not have any configurations.
 final Matcher configurationsIsEmpty = hiddenNamesHasLength(0);
