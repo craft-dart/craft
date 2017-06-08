@@ -7,5 +7,8 @@
 // Exports
 //---------------------------------------------------------------------
 
+export 'src/constructor_element_test.dart';
 export 'src/interfaces.dart';
 export 'src/parameter_element_test.dart';
+export 'src/uri_configuration_element_test.dart';
+export 'src/uri_referenced_element_test.dart';
