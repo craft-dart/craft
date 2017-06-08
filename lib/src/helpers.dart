@@ -12,11 +12,11 @@
 /// If [value] is not null then it will be used, otherwise an empty list will
 /// be returned.
 List<T> defaultList<T>(Iterable<T> value) =>
-    new List<T>.unmodifiable(value ?? <T>[]);
+    new List<T>.unmodifiable(value ?? const <T>[]);
 
 /// Create a default map.
 ///
 /// If [value] is not null then it will be used, otherwise an empty map will
 /// be returned.
 Map<K, V> defaultMap<K, V>(Map<K, V> value) =>
-    new Map<K, V>.unmodifiable(value ?? <K, V>{});
+    new Map<K, V>.unmodifiable(value ?? const <K, V>{});
