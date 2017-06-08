@@ -12,4 +12,4 @@
 /// If [value] is not null then it will be used, otherwise an empty list will
 /// be returned.
 List<T> defaultList<T>(Iterable<T> value) =>
-    new List<T>.unmodifiable(value ?? <T>[]);
+    new List<T>.unmodifiable(value ?? const <T>[]);
