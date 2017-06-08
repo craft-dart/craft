@@ -47,7 +47,8 @@ abstract class ElementMatcher<T extends Element> extends Matcher {
 
   @override
   Description describeMismatch(
-    dynamic item,
+    // ignore: type_annotate_public_apis
+    item,
     Description mismatchDescription,
     Map matchState,
     bool verbose,
@@ -71,8 +72,10 @@ abstract class ElementMatcher<T extends Element> extends Matcher {
   bool checkField(
     Map matchState,
     String name,
-    dynamic actual,
-    dynamic expected,
+    // ignore: type_annotate_public_apis
+    actual,
+    // ignore: type_annotate_public_apis
+    expected,
   ) {
     final matcher = _matcher(expected);
 
@@ -117,10 +120,11 @@ abstract class ElementMatcher<T extends Element> extends Matcher {
   //---------------------------------------------------------------------
 
   /// Checks the [actual] value against the [matcher].
+  // ignore: type_annotate_public_apis
   static bool _checkMatch(
     Map matchState,
     String name,
-    dynamic actual,
+    actual,
     Matcher matcher,
   ) {
     final valueMatchState = {};
@@ -141,7 +145,8 @@ abstract class ElementMatcher<T extends Element> extends Matcher {
   ///
   /// If the [expected] value is metadata then a [ElementMatcher] will be
   /// returned. Otherwise it will do an [equals] check.
-  static Matcher _matcher(dynamic expected) {
+  // ignore: type_annotate_public_apis
+  static Matcher _matcher(expected) {
     Matcher matcher;
 
     if (expected is Element) {

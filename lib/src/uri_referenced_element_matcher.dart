@@ -30,7 +30,8 @@ class UriReferencedElementMatcher extends ElementMatcher<UriReferencedElement> {
   //---------------------------------------------------------------------
 
   @override
-  bool matches(dynamic item, Map matchState) {
+  // ignore: type_annotate_public_apis
+  bool matches(item, Map matchState) {
     final actual = item as UriReferencedElement;
 
     checkField(matchState, 'prefix', actual.prefix, expected.prefix);

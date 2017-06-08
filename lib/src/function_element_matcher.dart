@@ -31,7 +31,8 @@ class FunctionElementMatcher<T extends FunctionElement>
   //---------------------------------------------------------------------
 
   @override
-  bool matches(dynamic item, Map matchState) {
+  // ignore: type_annotate_public_apis
+  bool matches(item, Map matchState) {
     super.matches(item, matchState);
 
     final actual = item as FunctionElement;

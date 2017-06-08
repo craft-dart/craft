@@ -18,7 +18,8 @@ import 'package:test/test.dart';
 const Matcher isDefaultsElement = const isInstanceOf<Defaults>();
 
 /// Matches the [expected] default value on [Defaults].
-Matcher defaultsTo(dynamic expected) => predicate((value) {
+// ignore: type_annotate_public_apis
+Matcher defaultsTo(expected) => predicate((value) {
       if (value is! Defaults) return false;
 
       return (value as Defaults).defaultValue == expected;

@@ -14,11 +14,13 @@ import 'package:test/test.dart';
 //---------------------------------------------------------------------
 
 /// The [matcher] should match the [value].
-void expectMatch(Matcher matcher, dynamic value) {
+// ignore: type_annotate_public_apis
+void expectMatch(Matcher matcher, value) {
   expect(matcher.matches(value, {}), isTrue);
 }
 
 /// The [matcher] should not match the [value].
-void expectNoMatch(Matcher matcher, dynamic value) {
+// ignore: type_annotate_public_apis
+void expectNoMatch(Matcher matcher, value) {
   expect(matcher.matches(value, {}), isFalse);
 }

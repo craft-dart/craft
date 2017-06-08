@@ -32,7 +32,8 @@ class UriConfigurationElementMatcher
   //---------------------------------------------------------------------
 
   @override
-  bool matches(dynamic item, Map matchState) {
+  // ignore: type_annotate_public_apis
+  bool matches(item, Map matchState) {
     final actual = item as UriConfigurationElement;
 
     checkField(matchState, 'when', actual.when, expected.when);
