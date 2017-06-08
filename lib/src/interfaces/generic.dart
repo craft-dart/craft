@@ -10,13 +10,14 @@
 import 'package:craft_type/type.dart';
 
 import '../element.dart';
+import 'typed.dart';
 
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
 
 /// An interface for [Element]s that can be generic.
-abstract class Generic implements Element {
+abstract class Generic implements Typed<ParameterizedType<GenericType>> {
   /// The type parameters for the element.
-  List<GenericType> get typeParameters;
+  List<GenericType> get typeParameters => type.typeArguments;
 }

@@ -22,8 +22,8 @@ import 'parameter_kind.dart';
 
 /// An element representing a function.
 class FunctionElement extends BaseElement
-    with EnclosedElement, EnclosingElement, Accessible
-    implements Generic, Typed<FunctionType> {
+    with EnclosedElement, EnclosingElement, Accessible, Generic
+    implements Typed<FunctionType<GenericType>> {
   //---------------------------------------------------------------------
   // Member variables
   //---------------------------------------------------------------------
@@ -68,21 +68,13 @@ class FunctionElement extends BaseElement
   }
 
   //---------------------------------------------------------------------
-  // Generic
-  //---------------------------------------------------------------------
-
-  @override
-  List<GenericType> get typeParameters =>
-      type.typeArguments as List<GenericType>;
-
-  //---------------------------------------------------------------------
   // Typed
   //---------------------------------------------------------------------
 
   @override
-  final FunctionType type;
+  final FunctionType<GenericType> type;
 
-  static FunctionType _functionType(
+  static FunctionType<GenericType> _functionType(
     List<GenericType> typeParameters,
     DartType returnType,
     List<ParameterElement> parameters,
@@ -112,7 +104,7 @@ class FunctionElement extends BaseElement
       }
     }
 
-    return new FunctionType(
+    return new FunctionType<GenericType>(
       typeArguments: typeParameters,
       returnType: returnType,
       requiredParameterNames: requiredParameterNames,

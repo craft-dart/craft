@@ -23,16 +23,25 @@ import 'method_element.dart';
 
 /// Contains metadata for a class.
 class ClassElement extends BaseElement
-    with Accessible, EnclosedElement, EnclosingElement
-    implements Abstract, Generic, Typed {
+    with Accessible, EnclosedElement, EnclosingElement, Generic
+    implements Abstract, Typed<InterfaceType<GenericType>> {
   //---------------------------------------------------------------------
-  // Member variables
+  // Typed
   //---------------------------------------------------------------------
 
   @override
-  final InterfaceType type;
+  final InterfaceType<GenericType> type;
+
+  //---------------------------------------------------------------------
+  // Abstract
+  //---------------------------------------------------------------------
+
   @override
   final bool isAbstract;
+
+  //---------------------------------------------------------------------
+  // Member variables
+  //---------------------------------------------------------------------
 
   /// The parent class type.
   final InterfaceType supertype;
@@ -42,8 +51,6 @@ class ClassElement extends BaseElement
 
   /// The types this class mixins with.
   final List<InterfaceType> mixins;
-  @override
-  final List<GenericType> typeParameters;
 
   /// The fields for the class.
   final List<FieldElement> fields;
@@ -81,7 +88,6 @@ class ClassElement extends BaseElement
       : type = new InterfaceType(name, typeParameters),
         interfaces = defaultList<InterfaceType>(interfaces),
         mixins = defaultList<InterfaceType>(mixins),
-        typeParameters = defaultList<GenericType>(typeParameters),
         fields = defaultList<FieldElement>(fields),
         methods = defaultList<MethodElement>(methods),
         constructors = defaultList<ConstructorElement>(constructors),
