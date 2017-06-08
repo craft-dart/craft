@@ -11,9 +11,13 @@
 
 import 'package:test/test.dart';
 
+import 'src/interface_types_test.dart' as interface_types_test;
+
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
 
 /// Entry point for tests.
-void main() {}
+void main() {
+  group('Interface types', interface_types_test.main);
+}
