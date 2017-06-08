@@ -1,6 +1,10 @@
 #!/bin/sh
 set -ex
 
+# Clone unpublished craft-dart packages
+git clone https://github.com/craft-dart/craft-type.git ../craft-type
+git clone https://github.com/craft-dart/craft-element.git ../craft-element
+
 # Get version
 dart --version
 
