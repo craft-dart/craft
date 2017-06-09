@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   resource: ^2.1.2
+  yaml: ^2.1.12
 
 dev_dependencies:
   test: ^0.12.0
