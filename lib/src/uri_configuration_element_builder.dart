@@ -56,12 +56,14 @@ UriConfigurationElementBuilder uriConfiguration(String when) =>
 
 /// A configuration for `dart.io` applications.
 UriConfigurationElementBuilder dartIoConfiguration() =>
-    new UriConfigurationElementBuilder()..when = 'dart.library.io';
+    new UriConfigurationElementBuilder()..when = UriConfigurationElement.whenIo;
 
 /// A configuration for `dart:html` applications.
 UriConfigurationElementBuilder dartHtmlConfiguration() =>
-    new UriConfigurationElementBuilder()..when = 'dart.library.html';
+    new UriConfigurationElementBuilder()
+      ..when = UriConfigurationElement.whenHtml;
 
 /// A configuration for `dart:ui` applications.
 UriConfigurationElementBuilder flutterUiConfiguration() =>
-    new UriConfigurationElementBuilder()..when = 'dart.library.ui';
+    new UriConfigurationElementBuilder()
+      ..when = UriConfigurationElement.whenFlutter;
