@@ -55,6 +55,6 @@ class UriReferencedElementMatcher extends ElementMatcher<UriReferencedElement> {
       expected.configurations,
     );
 
-    return matchState.isNotEmpty;
+    return matchState.isEmpty;
   }
 }

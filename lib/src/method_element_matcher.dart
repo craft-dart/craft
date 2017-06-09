@@ -44,6 +44,6 @@ class MethodElementMatcher extends FunctionElementMatcher<MethodElement> {
     );
     checkField(matchState, 'isStatic', actual.isStatic, expected.isStatic);
 
-    return matchState.isNotEmpty;
+    return matchState.isEmpty;
   }
 }

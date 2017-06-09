@@ -45,6 +45,6 @@ class FunctionElementMatcher<T extends FunctionElement>
       expected.parameters,
     );
 
-    return matchState.isNotEmpty;
+    return matchState.isEmpty;
   }
 }

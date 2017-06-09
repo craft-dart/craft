@@ -39,6 +39,6 @@ class UriConfigurationElementMatcher
     checkField(matchState, 'when', actual.when, expected.when);
     checkField(matchState, 'equals', actual.equals, expected.equals);
 
-    return matchState.isNotEmpty;
+    return matchState.isEmpty;
   }
 }

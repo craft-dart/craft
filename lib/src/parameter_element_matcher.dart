@@ -62,6 +62,6 @@ class ParameterElementMatcher extends BaseElementMatcher<ParameterElement> {
       expected.defaultValue,
     );
 
-    return matchState.isNotEmpty;
+    return matchState.isEmpty;
   }
 }

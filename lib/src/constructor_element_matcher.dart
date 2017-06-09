@@ -40,6 +40,6 @@ class ConstructorElementMatcher
     checkField(matchState, 'isConst', actual.isConst, expected.isConst);
     checkField(matchState, 'isFactory', actual.isFactory, expected.isFactory);
 
-    return matchState.isNotEmpty;
+    return matchState.isEmpty;
   }
 }
