@@ -9,6 +9,7 @@
 
 export 'interfaces/abstract_test.dart';
 export 'interfaces/accessible_test.dart';
+export 'interfaces/annotated_test.dart';
 export 'interfaces/constant_test.dart';
 export 'interfaces/defaults_test.dart';
 export 'interfaces/named_test.dart';
