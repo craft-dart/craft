@@ -26,8 +26,7 @@ const String _name = 'method';
 void main() {
   test('validate name', expectThrowsOnUnnamed(method('')));
   test('builder defaults', () {
-    final builder = new MethodElementBuilder()
-      ..name = _name;
+    final builder = new MethodElementBuilder()..name = _name;
     final expected = new MethodElement(_name);
 
     expectElementEqual<MethodElement>(builder, expected);
@@ -44,21 +43,17 @@ void main() {
     final builder = new MethodElementBuilder()
       ..name = _name
       ..returnType = returnType
-      ..parameters = <ParameterElementBuilder>[
-        parameter(paramName)
-      ]
+      ..parameters = <ParameterElementBuilder>[parameter(paramName)]
       ..isStatic = true
       ..isAbstract = false
       ..annotations = annotations
       ..comments.writeRaw(comments);
     final expected = new MethodElement(
-        _name,
-        returnType: returnType,
-        parameters: <ParameterElement>[
-          new ParameterElement(paramName)
-        ],
-        isStatic: isStatic,
-        isAbstract: isAbstract,
+      _name,
+      returnType: returnType,
+      parameters: <ParameterElement>[new ParameterElement(paramName)],
+      isStatic: isStatic,
+      isAbstract: isAbstract,
     );
 
     expectElementEqual<FunctionElement>(builder, expected);

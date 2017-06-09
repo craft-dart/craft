@@ -11,11 +11,15 @@
 
 import 'package:test/test.dart';
 
-import 'src/function_element_builder_test.dart' as function_element_builder_test;
+import 'src/function_element_builder_test.dart'
+    as function_element_builder_test;
 import 'src/method_element_builder_test.dart' as method_element_builder_test;
-import 'src/parameter_element_builder_test.dart' as parameter_element_builder_test;
-import 'src/uri_configuration_element_builder_test.dart' as uri_configuration_element_builder_test;
-import 'src/uri_referenced_element_builder_test.dart' as uri_referenced_element_builder_test;
+import 'src/parameter_element_builder_test.dart'
+    as parameter_element_builder_test;
+import 'src/uri_configuration_element_builder_test.dart'
+    as uri_configuration_element_builder_test;
+import 'src/uri_referenced_element_builder_test.dart'
+    as uri_referenced_element_builder_test;
 
 //---------------------------------------------------------------------
 // Library contents
@@ -27,6 +31,8 @@ void main() {
   group('FunctionElementBuilder', function_element_builder_test.main);
   group('MethodElementBuilder', method_element_builder_test.main);
   group('ParameterElementBuilder', parameter_element_builder_test.main);
-  group('UriConfigurationElementBuilder', uri_configuration_element_builder_test.main);
-  group('UriReferencedElementBuilder', uri_referenced_element_builder_test.main);
+  group('UriConfigurationElementBuilder',
+      uri_configuration_element_builder_test.main);
+  group(
+      'UriReferencedElementBuilder', uri_referenced_element_builder_test.main);
 }
