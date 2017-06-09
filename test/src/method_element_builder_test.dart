@@ -69,4 +69,10 @@ void main() {
     expect(actual, annotationsHasLength(1));
     expect(actual, commentedWith(comments));
   });
+  test('staticMethod', () {
+    final builder = staticMethod(_name);
+    final expected = new MethodElement(_name, isStatic: true);
+
+    expectElementEqual<MethodElement>(builder, expected);
+  });
 }
