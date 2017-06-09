@@ -11,6 +11,8 @@
 
 import 'package:test/test.dart';
 
+import 'src/constructor_element_builder_test.dart'
+    as constructor_element_builder_test;
 import 'src/function_element_builder_test.dart'
     as function_element_builder_test;
 import 'src/method_element_builder_test.dart' as method_element_builder_test;
@@ -29,6 +31,7 @@ import 'src/uri_referenced_element_builder_test.dart'
 /// Entry point for tests.
 void main() {
   // Run tests
+  group('ConstructorElementBuilder', constructor_element_builder_test.main);
   group('FunctionElementBuilder', function_element_builder_test.main);
   group('MethodElementBuilder', method_element_builder_test.main);
   group('ParameterElementBuilder', parameter_element_builder_test.main);
