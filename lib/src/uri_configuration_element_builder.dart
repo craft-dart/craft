@@ -40,7 +40,7 @@ class UriConfigurationElementBuilder
   UriConfigurationElement buildInternal() => new UriConfigurationElement(
         when,
         equals: equals,
-        library: library.build(),
+        library: library?.build(),
       );
 }
 

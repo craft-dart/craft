@@ -47,7 +47,7 @@ class UriReferencedElementBuilder extends ElementBuilder<UriReferencedElement>
   @override
   UriReferencedElement buildInternal() => new UriReferencedElement(
         prefix: prefix,
-        library: library.build(),
+        library: library?.build(),
         deferred: deferred,
         shownNames: shownNames,
         hiddenNames: hiddenNames,
