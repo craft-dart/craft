@@ -9,6 +9,7 @@
 
 import 'package:craft_element/element.dart';
 import 'package:craft_element_builder/element_builder.dart';
+import 'package:craft_element_test/element_test.dart';
 import 'package:craft_type/type.dart';
 import 'package:test/test.dart';
 
@@ -65,7 +66,7 @@ void main() {
     // Comments are not valid on parameters
     final actual = builder.build();
 
-    expect(actual.annotations, hasLength(1));
+    expect(actual, annotationsHasLength(1));
   });
   test('parameter', () {
     final builder = parameter(_name);
