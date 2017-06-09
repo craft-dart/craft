@@ -31,4 +31,28 @@ void main() {
       expected,
     );
   });
+  test('dartIoConfiguration', () {
+    final builder = dartIoConfiguration();
+    final expected = new UriConfigurationElement(
+      UriConfigurationElement.whenIo,
+    );
+
+    expectElementEqual<UriConfigurationElement>(builder, expected);
+  });
+  test('dartHtmlConfiguration', () {
+    final builder = dartHtmlConfiguration();
+    final expected = new UriConfigurationElement(
+      UriConfigurationElement.whenHtml,
+    );
+
+    expectElementEqual<UriConfigurationElement>(builder, expected);
+  });
+  test('flutterUiConfiguration', () {
+    final builder = flutterUiConfiguration();
+    final expected = new UriConfigurationElement(
+      UriConfigurationElement.whenFlutter,
+    );
+
+    expectElementEqual<UriConfigurationElement>(builder, expected);
+  });
 }
