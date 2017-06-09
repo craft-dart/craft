@@ -29,8 +29,7 @@ final Matcher isCommented = predicate((value) {
 }, 'element is commented');
 
 /// Matcher to see if the [comment] is present on the [Commented] element.
-Matcher commentedWith(String comment) =>
-    predicate((value) {
+Matcher commentedWith(String comment) => predicate((value) {
       if (value is! Commented) return false;
 
       return (value as Commented).comments == comment;

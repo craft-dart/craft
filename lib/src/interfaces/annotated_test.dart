@@ -19,10 +19,10 @@ const Matcher isAnnotatedElement = const isInstanceOf<Annotated>();
 
 /// Matches the [length] of [Annotated.annotations].
 Matcher annotationsHasLength(int length) => predicate((value) {
-  if (value is! Annotated) return false;
+      if (value is! Annotated) return false;
 
-  return (value as Annotated).annotations.length == length;
-}, 'element contains $length annotations');
+      return (value as Annotated).annotations.length == length;
+    }, 'element contains $length annotations');
 
 /// A matcher for [Annotated] elements that are not annotated.
 final Matcher annotationsIsEmpty = annotationsHasLength(0);
