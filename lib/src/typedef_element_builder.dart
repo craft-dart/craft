@@ -32,3 +32,15 @@ class TypedefElementBuilder extends FunctionElementBuilder<TypedefElement> {
         comments: comments.toString(),
       );
 }
+
+/// Creates an instance of [TypedefElementBuilder] with the given [name].
+///
+/// The builder returned is equivalent to the following typedef declaration.
+///
+///     // sdk < 1.24.0
+///     typedef dynamic name();
+///
+///     // sdk >= 1.24.0
+///     typedef name = dynamic Function();
+TypedefElementBuilder typedef(String name) =>
+    new TypedefElementBuilder()..name = name;
