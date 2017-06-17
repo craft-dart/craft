@@ -21,8 +21,8 @@ import 'element_source_visitor.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-/// Builds an AST representation of [FunctionElement]s and its associated
-/// subclasses.
+/// Builds an AST representation of [UriReferencedElement]s and
+/// [UriConfigurationElement]s.
 abstract class UriReferencedElementSourceVisitor
     implements ElementSourceVisitor {
   //---------------------------------------------------------------------
@@ -31,18 +31,26 @@ abstract class UriReferencedElementSourceVisitor
 
   @override
   ast.ImportDirective visitImportElement(UriReferencedElement element) {
-    final prefix = element.prefix;
-    final prefixIsEmpty = prefix.isEmpty;
+    final elementPrefix = element.prefix;
+    var asKeyword;
+    var prefix;
+
+    if (elementPrefix.isNotEmpty) {
+      asKeyword = $as;
+      prefix = stringIdentifier(elementPrefix);
+    }
 
     return astFactory.importDirective(
       null, // comment
       null, // metadata
       $import,
-      _visitUri(element),
-      null, // configurations
+      _visitUriReference(element),
+      element.configurations
+          .map<ast.Configuration>(visitUriConfigurationElement)
+          .toList(),
       element.deferred ? $deferred : null,
-      prefixIsEmpty ? null : $as,
-      prefixIsEmpty ? null : stringIdentifier(prefix),
+      asKeyword as ast.Token,
+      prefix as ast.SimpleIdentifier,
       _visitCombinators(element),
       $semicolon,
     );
@@ -54,11 +62,37 @@ abstract class UriReferencedElementSourceVisitor
         null, // comment
         null, // metadata
         $export,
-        _visitUri(element),
-        null, // configurations
+        _visitUriReference(element),
+        element.configurations
+            .map<ast.Configuration>(visitUriConfigurationElement)
+            .toList(),
         _visitCombinators(element),
         $semicolon,
       );
+
+  @override
+  ast.Configuration visitUriConfigurationElement(
+    UriConfigurationElement element,
+  ) {
+    final equals = element.equals;
+    var equalsToken;
+    var value;
+
+    if (equals != 'true') {
+      equalsToken = $equality;
+      value = stringLiteral(equals);
+    }
+
+    return astFactory.configuration(
+      $if,
+      $openParen,
+      dottedName(element.when),
+      equalsToken as ast.Token,
+      value as ast.StringLiteral,
+      $closeParen,
+      _visitUriConfiguration(element),
+    );
+  }
 
   //---------------------------------------------------------------------
   // Private methods
@@ -83,9 +117,27 @@ abstract class UriReferencedElementSourceVisitor
     ];
   }
 
+  /// Determines the path to the [element]s uri from the library containing the
+  /// element.
+  ast.StringLiteral _visitUriReference(UriReferencedElement element) =>
+      _uriPath(
+        element.library.uri,
+        (element.enclosingElement as LibraryElement).uri,
+      );
+
+  /// Determines the path to the [element]s uri from the library containing the
+  /// element.
+  ast.StringLiteral _visitUriConfiguration(UriConfigurationElement element) =>
+      _uriPath(
+        element.library.uri,
+        ((element.enclosingElement as UriReferencedElement).enclosingElement
+                as LibraryElement)
+            .uri,
+      );
+
   // \TODO Use relative path when relevant
 
-  /// Visits the [element]'s uri.
-  ast.StringLiteral _visitUri(UriReferencedElement element) =>
-      stringLiteral(element.library.uri.toString());
+  /// Determines the path [to] the Uri [from] its current location.
+  ast.StringLiteral _uriPath(Uri to, Uri from) =>
+      stringLiteral(from.toString());
 }

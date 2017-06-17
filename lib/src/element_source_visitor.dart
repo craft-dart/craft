@@ -43,4 +43,10 @@ abstract class ElementSourceVisitor {
   /// Visits a [LibraryElement] and returns the compilation unit associated
   /// with the [element].
   ast.CompilationUnit visitLibraryElement(LibraryElement element);
+
+  /// Visits a [UriConfigurationElement] and returns the configuration
+  /// associated with the [element].
+  ast.Configuration visitUriConfigurationElement(
+    UriConfigurationElement element,
+  );
 }
