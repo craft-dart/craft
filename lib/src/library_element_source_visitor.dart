@@ -93,9 +93,7 @@ abstract class LibraryElementSourceBuilder implements ElementSourceVisitor {
 
   /// Create a [ast.LibraryIdentifier] from the [name].
   ast.LibraryIdentifier _libraryIdentifier(String name) =>
-      astFactory.libraryIdentifier(
-        name.split('.').map<ast.SimpleIdentifier>(stringIdentifier).toList(),
-      );
+      astFactory.libraryIdentifier(dottedName(name).components);
 
   // \TODO Implement
 

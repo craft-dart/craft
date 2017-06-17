@@ -16,5 +16,13 @@ import 'tokens.dart';
 // Library contents
 //---------------------------------------------------------------------
 
+/// Creates a [ast.SimpleIdentifier] from the string [value].
 ast.SimpleIdentifier stringIdentifier(String value) =>
     astFactory.simpleIdentifier(stringToken(value));
+
+/// Create a [ast.DottedName] from the [value].
+///
+/// DottedNames are used for library declarations.
+ast.DottedName dottedName(String value) => astFactory.dottedName(
+      value.split('.').map<ast.SimpleIdentifier>(stringIdentifier).toList(),
+    );
