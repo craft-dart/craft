@@ -10,12 +10,7 @@
 import 'package:craft_element/element.dart';
 
 import 'base_element_builder.dart';
-import 'class_element_builder.dart';
 import 'element_builder.dart';
-import 'field_element_builder.dart';
-import 'function_element_builder.dart';
-import 'typedef_element_builder.dart';
-import 'uri_referenced_element_builder.dart';
 
 //---------------------------------------------------------------------
 // Library contents

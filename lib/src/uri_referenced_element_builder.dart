@@ -11,7 +11,6 @@ import 'package:craft_element/element.dart';
 
 import 'element_builder.dart';
 import 'interfaces.dart';
-import 'uri_configuration_element_builder.dart';
 
 //---------------------------------------------------------------------
 // Library contents

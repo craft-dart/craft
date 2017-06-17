@@ -13,9 +13,7 @@ import 'package:craft_type/type.dart';
 import 'base_element_builder.dart';
 import 'constructor_element_builder.dart';
 import 'element_builder.dart';
-import 'field_element_builder.dart';
 import 'interfaces.dart';
-import 'method_element_builder.dart';
 
 //---------------------------------------------------------------------
 // Library contents
