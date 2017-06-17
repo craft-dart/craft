@@ -21,32 +21,50 @@ import 'package:analyzer/src/dart/ast/token.dart'
 /// A `abstract` token.
 final Token $abstract = new KeywordToken(Keyword.ABSTRACT, 0);
 
+/// A `as` token.
+final Token $as = new KeywordToken(Keyword.AS, 0);
+
 /// A `class` token.
 final Token $class = new KeywordToken(Keyword.CLASS, 0);
 
 /// A `}` token.
 final Token $closeCurly = new Token(TokenType.CLOSE_CURLY_BRACKET, 0);
 
+/// A `deferred` token.
+final Token $deferred = new KeywordToken(Keyword.DEFERRED, 0);
+
+/// A `export` token.
+final Token $export = new KeywordToken(Keyword.EXPORT, 0);
+
 /// A `extends` token.
 final Token $extends = new KeywordToken(Keyword.EXTENDS, 0);
-
-/// A `implements` token.
-final Token $implements = new KeywordToken(Keyword.IMPLEMENTS, 0);
-
-/// A `<` token.
-final Token $lt = new Token(TokenType.LT, 0);
 
 /// A `>` token.
 final Token $gt = new Token(TokenType.GT, 0);
 
+/// A `hide` token.
+final Token $hide = new KeywordToken(Keyword.HIDE, 0);
+
+/// A `implements` token.
+final Token $implements = new KeywordToken(Keyword.IMPLEMENTS, 0);
+
+/// A `import` token.
+final Token $import = new KeywordToken(Keyword.IMPORT, 0);
+
 /// A `library` token.
 final Token $library = new KeywordToken(Keyword.LIBRARY, 0);
+
+/// A `<` token.
+final Token $lt = new Token(TokenType.LT, 0);
 
 /// A `{` token.
 final Token $openCurly = new Token(TokenType.OPEN_CURLY_BRACKET, 0);
 
 /// A `;` token.
 final Token $semicolon = new Token(TokenType.SEMICOLON, 0);
+
+/// A `show` token.
+final Token $show = new KeywordToken(Keyword.SHOW, 0);
 
 /// A `with` token.
 final Token $with = new KeywordToken(Keyword.WITH, 0);

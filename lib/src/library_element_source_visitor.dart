@@ -29,16 +29,27 @@ abstract class LibraryElementSourceBuilder implements ElementSourceVisitor {
   @override
   ast.CompilationUnit visitLibraryElement(LibraryElement element) {
     final directives = <ast.Directive>[];
-    final declarations = <ast.CompilationUnitMember>[];
+
+    // Add library directive if applicable
     final libraryDirective = _libraryDirective(element);
 
     if (libraryDirective != null) {
       directives.add(libraryDirective);
     }
 
-    declarations.addAll(
-      element.classes.map<ast.ClassDeclaration>(visitClassElement),
-    );
+    // Add imports and exports
+    directives
+      ..addAll(
+        element.imports.map<ast.ImportDirective>(visitImportElement),
+      )
+      ..addAll(
+        element.exports.map<ast.ExportDirective>(visitExportElement),
+      );
+
+    // Add declarations
+    final declarations = <ast.CompilationUnitMember>[]..addAll(
+        element.classes.map<ast.ClassDeclaration>(visitClassElement),
+      );
 
     return astFactory.compilationUnit(
       null, // beginToken

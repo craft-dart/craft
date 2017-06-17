@@ -32,6 +32,14 @@ abstract class ElementSourceVisitor {
   /// If the comments are empty `null` will be returned.
   ast.Comment visitCommented(Commented element);
 
+  /// Visits a [UriReferencedElement] that corresponds to an `export` and
+  /// returns the declaration associated with the [element].
+  ast.ExportDirective visitExportElement(UriReferencedElement element);
+
+  /// Visits a [UriReferencedElement] that corresponds to an `import` and
+  /// returns the declaration associated with the [element].
+  ast.ImportDirective visitImportElement(UriReferencedElement element);
+
   /// Visits a [LibraryElement] and returns the compilation unit associated
   /// with the [element].
   ast.CompilationUnit visitLibraryElement(LibraryElement element);
