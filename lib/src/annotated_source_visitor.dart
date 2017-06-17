@@ -10,21 +10,20 @@
 import 'package:analyzer/dart/ast/ast.dart' as ast;
 import 'package:craft_element/element.dart';
 
+import 'element_source_visitor.dart';
+
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
 
-/// Visits [Element]s building an AST representation.
-abstract class ElementSourceVisitor {
-  /// Visits a [Commented] and returns the documentation comments associated
-  /// with the [element].
-  ///
-  /// If the comments are empty `null` will be returned.
-  ast.Comment visitCommented(Commented element);
+/// Builds an AST representation of [Commented] elements.
+abstract class AnnotatedSourceVisitor implements ElementSourceVisitor {
+  //---------------------------------------------------------------------
+  // ElementSourceVisitor
+  //---------------------------------------------------------------------
 
-  /// Visits a [Annotated] and returns the annotations associated with the
-  /// [element].
-  ///
-  /// If the element is not annotated then an empty list will be returned.
-  List<ast.Annotation> visitAnnotated(Annotated element);
+  // \TODO Implement
+
+  @override
+  List<ast.Annotation> visitAnnotated(Annotated element) => <ast.Annotation>[];
 }
