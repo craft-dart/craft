@@ -20,5 +20,5 @@ import '../library_element_builder.dart';
 abstract class LibraryReferenceBuilder<T extends LibraryReference>
     implements ElementBuilder<T> {
   /// The [LibraryElementBuilder] referenced.
-  LibraryElementBuilder library;
+  ElementBuilder<LibraryElement> library;
 }

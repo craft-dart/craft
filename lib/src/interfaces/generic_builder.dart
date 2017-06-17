@@ -19,5 +19,5 @@ import '../element_builder.dart';
 /// An interface for [ElementBuilder]s that build [Generic] elements.
 abstract class GenericBuilder<T extends Generic> implements ElementBuilder<T> {
   /// The type parameters for the element being built.
-  List<GenericType> typeParameters = <GenericType>[];
+  Iterable<GenericType> typeParameters = <GenericType>[];
 }

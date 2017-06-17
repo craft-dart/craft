@@ -32,19 +32,22 @@ class ClassElementBuilder extends BaseElementBuilder<ClassElement>
   InterfaceType supertype;
 
   /// The types this class implements.
-  List<InterfaceType> interfaces = <InterfaceType>[];
+  Iterable<InterfaceType> interfaces = <InterfaceType>[];
 
   /// The types this class mixins with.
-  List<InterfaceType> mixins = <InterfaceType>[];
+  Iterable<InterfaceType> mixins = <InterfaceType>[];
 
   /// The fields for the class.
-  List<FieldElementBuilder> fields = <FieldElementBuilder>[];
+  Iterable<ElementBuilder<FieldElement>> fields =
+      <ElementBuilder<FieldElement>>[];
 
   /// The methods for the class.
-  List<MethodElementBuilder> methods = <MethodElementBuilder>[];
+  Iterable<ElementBuilder<MethodElement>> methods =
+      <ElementBuilder<MethodElement>>[];
 
   /// The constructors for the class.
-  List<ConstructorElementBuilder> constructors = <ConstructorElementBuilder>[];
+  Iterable<ElementBuilder<ConstructorElement>> constructors =
+      <ElementBuilder<ConstructorElement>>[];
 
   //---------------------------------------------------------------------
   // ElementBuilder
@@ -63,7 +66,7 @@ class ClassElementBuilder extends BaseElementBuilder<ClassElement>
     // The return type also includes the type parameters for the class.
     final classType = new InterfaceType(name, typeParameters);
     for (var constructor in classConstructors) {
-      constructor.returnType = classType;
+      (constructor as ConstructorElementBuilder).returnType = classType;
     }
 
     return new ClassElement(

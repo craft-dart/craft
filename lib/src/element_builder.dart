@@ -44,7 +44,7 @@ abstract class ElementBuilder<T extends Element> {
   T buildInternal();
 }
 
-/// Builds a list of [ElementBuilder]s.
-List<T> buildElements<T extends Element>(
+/// Builds the [ElementBuilder]s.
+Iterable<T> buildElements<T extends Element>(
         Iterable<ElementBuilder<T>> builders) =>
-    builders.map<T>((value) => value.build()).toList();
+    builders.map<T>((value) => value.build());

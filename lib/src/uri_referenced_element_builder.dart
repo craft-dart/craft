@@ -31,14 +31,14 @@ class UriReferencedElementBuilder extends ElementBuilder<UriReferencedElement>
   bool deferred = false;
 
   /// The names within the library that are shown.
-  List<String> shownNames = <String>[];
+  Iterable<String> shownNames = <String>[];
 
   /// The names within the library that are hidden.
-  List<String> hiddenNames = <String>[];
+  Iterable<String> hiddenNames = <String>[];
 
   /// The configuration specific imports.
-  List<UriConfigurationElementBuilder> configurations =
-      <UriConfigurationElementBuilder>[];
+  Iterable<ElementBuilder<UriConfigurationElement>> configurations =
+      <ElementBuilder<UriConfigurationElement>>[];
 
   //---------------------------------------------------------------------
   // ElementBuilder

@@ -31,22 +31,28 @@ class LibraryElementBuilder extends BaseElementBuilder<LibraryElement> {
   Uri uri;
 
   /// The import references for the library.
-  List<UriReferencedElementBuilder> imports = <UriReferencedElementBuilder>[];
+  Iterable<ElementBuilder<UriReferencedElement>> imports =
+      <ElementBuilder<UriReferencedElement>>[];
 
   /// The export references for the library.
-  List<UriReferencedElementBuilder> exports = <UriReferencedElementBuilder>[];
+  Iterable<ElementBuilder<UriReferencedElement>> exports =
+      <ElementBuilder<UriReferencedElement>>[];
 
   /// The classes contained within the library.
-  List<ClassElementBuilder> classes = <ClassElementBuilder>[];
+  Iterable<ElementBuilder<ClassElement>> classes =
+      <ElementBuilder<ClassElement>>[];
 
   /// The functions contained within the library.
-  List<FunctionElementBuilder> functions = <FunctionElementBuilder>[];
+  Iterable<ElementBuilder<FunctionElement>> functions =
+      <ElementBuilder<FunctionElement>>[];
 
   /// The fields contained within the library.
-  List<FieldElementBuilder> fields = <FieldElementBuilder>[];
+  Iterable<ElementBuilder<FieldElement>> fields =
+      <ElementBuilder<FieldElement>>[];
 
   /// The function type definitions contained within the library.
-  List<TypedefElementBuilder> typedefs = <TypedefElementBuilder>[];
+  Iterable<ElementBuilder<TypedefElement>> typedefs =
+      <ElementBuilder<TypedefElement>>[];
 
   //---------------------------------------------------------------------
   // ElementBuilder

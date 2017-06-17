@@ -33,8 +33,9 @@ class FunctionElementBuilder<T extends FunctionElement>
   /// The return type of the function.
   DartType returnType = dynamicType;
 
-  /// The list of parameters for the function.
-  List<ParameterElementBuilder> parameters = <ParameterElementBuilder>[];
+  /// The parameters for the function.
+  Iterable<ElementBuilder<ParameterElement>> parameters =
+      <ParameterElementBuilder>[];
 
   //---------------------------------------------------------------------
   // ElementBuilder
