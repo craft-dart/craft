@@ -72,7 +72,7 @@ class ParameterElement extends BaseElement
     this.isInitializer: false,
     this.isCovariant: false,
     this.defaultValue,
-    List annotations,
+    Iterable annotations,
   })
       : type = type ?? dynamicType,
         super(name, annotations, '');
