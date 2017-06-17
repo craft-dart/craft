@@ -13,6 +13,8 @@ import 'package:craft_element/element.dart';
 import 'package:craft_element_builder/element_builder.dart';
 import 'package:craft_type/type.dart';
 
+import 'element_builder_visitor_impl.dart';
+
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
@@ -21,6 +23,13 @@ import 'package:craft_type/type.dart';
 /// the structure of elements encountered by the analyzer.
 abstract class ElementBuilderVisitor
     implements analyzer.ElementVisitor<ElementBuilder> {
+  //---------------------------------------------------------------------
+  // Construction
+  //---------------------------------------------------------------------
+
+  /// Creates an instance of the [ElementBuilderVisitor] class.
+  factory ElementBuilderVisitor() => new ElementBuilderVisitorImpl();
+  
   //---------------------------------------------------------------------
   // ElementVisitor
   //---------------------------------------------------------------------
