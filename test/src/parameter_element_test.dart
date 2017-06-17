@@ -36,6 +36,13 @@ void main() {
     expect(element, isRequiredParameter);
     expect(element, isNotInitializer);
     expect(element, isNotCovariant);
+    expect(element, annotationsIsEmpty);
+    expect(element, isUncommented);
+    // Comments aren't allowed on a parameter
+    expect(element, isUncommented);
+
+    // Check immutable lists
+    expect(element.annotations.clear, throwsUnsupportedError);
   });
   test('isRequired', () {
     expect(_requiredParameterElement.isRequired, isTrue);

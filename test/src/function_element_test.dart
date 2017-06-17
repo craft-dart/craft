@@ -23,8 +23,11 @@ void main() {
     // Check values
     expect(element, isNamed('foo'));
     expect(element, isType(new FunctionType(returnType: dynamicType)));
+    expect(element, annotationsIsEmpty);
+    expect(element, isUncommented);
 
     // Check immutable lists
+    expect(element.annotations.clear, throwsUnsupportedError);
     expect(element.parameters.clear, throwsUnsupportedError);
   });
 }
