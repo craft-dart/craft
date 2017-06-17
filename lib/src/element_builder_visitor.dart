@@ -101,4 +101,24 @@ abstract class ElementBuilderVisitor
   GenericType visitGenericType(
     analyzer.TypeParameterType type,
   );
+
+  //---------------------------------------------------------------------
+  // BaseElement
+  //---------------------------------------------------------------------
+
+  /// Visits the [element] and assigns values to the [builder].
+  ///
+  /// This is used to get common [BaseElementBuilder] functionality that is
+  /// present on an [analyzer.Element]. This will get the name of the element,
+  /// visit annotations, and documentation comments.
+  ElementBuilder<T> visitElement<T extends BaseElement>(
+    analyzer.Element element,
+    BaseElementBuilder<T> builder,
+  );
+
+  /// Visits the [annotation] and returns an instance of it if possible.
+  dynamic visitElementAnnotation(analyzer.ElementAnnotation annotation);
+
+  /// Visits the [element] and returns its documentation comment.
+  CommentBuffer visitDocumentationComment(analyzer.Element element);
 }
