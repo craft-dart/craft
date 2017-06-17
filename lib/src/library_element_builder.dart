@@ -71,6 +71,9 @@ class LibraryElementBuilder extends BaseElementBuilder<LibraryElement> {
         annotations: annotations,
         comments: comments.toString(),
       );
+
+  @override
+  void validate() {}
 }
 
 /// Creates an instance of [LibraryElementBuilder] located at the given [uri].
