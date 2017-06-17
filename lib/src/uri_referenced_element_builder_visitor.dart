@@ -63,7 +63,8 @@ abstract class UriReferencedElementBuilderVisitor
     analyzer.LibraryElement referencedLibrary,
   ) {
     final configurations =
-        (element.computeNode() as analyzer.NamespaceDirective)?.configurations ??
+        (element.computeNode() as analyzer.NamespaceDirective)
+                ?.configurations ??
             <analyzer.Configuration>[];
 
     return uriReferenced()

@@ -29,7 +29,7 @@ abstract class ElementBuilderVisitor
 
   /// Creates an instance of the [ElementBuilderVisitor] class.
   factory ElementBuilderVisitor() => new ElementBuilderVisitorImpl();
-  
+
   //---------------------------------------------------------------------
   // ElementVisitor
   //---------------------------------------------------------------------
