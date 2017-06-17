@@ -8,8 +8,10 @@
 //---------------------------------------------------------------------
 
 import 'package:analyzer/dart/element/element.dart' as analyzer;
+import 'package:analyzer/dart/element/type.dart' as analyzer;
 import 'package:craft_element/element.dart';
 import 'package:craft_element_builder/element_builder.dart';
+import 'package:craft_type/type.dart';
 
 //---------------------------------------------------------------------
 // Library contents
@@ -76,5 +78,27 @@ abstract class ElementBuilderVisitor
   @override
   ElementBuilder<FieldElement> visitTopLevelVariableElement(
     analyzer.TopLevelVariableElement element,
+  );
+
+  //---------------------------------------------------------------------
+  // DartType
+  //---------------------------------------------------------------------
+
+  /// Visits the [type] and creates the associated [DartType].
+  T visitDartType<T extends DartType>(analyzer.DartType type);
+
+  /// Visits the [type] and creates the associated [InterfaceType].
+  InterfaceType<T> visitInterfaceType<T extends DartType>(
+    analyzer.InterfaceType type,
+  );
+
+  /// Visits the [type] and creates the associated [FunctionType].
+  FunctionType<T> visitFunctionType<T extends DartType>(
+    analyzer.FunctionType type,
+  );
+
+  /// Visits the [type] and creates the associated [GenericType].
+  GenericType visitGenericType(
+    analyzer.TypeParameterType type,
   );
 }
