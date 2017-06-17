@@ -16,15 +16,20 @@ import 'package:craft_element/element.dart';
 
 /// Visits [Element]s building an AST representation.
 abstract class ElementSourceVisitor {
+  /// Visits a [Annotated] and returns the annotations associated with the
+  /// [element].
+  ///
+  /// If the element is not annotated then an empty list will be returned.
+  List<ast.Annotation> visitAnnotated(Annotated element);
+
   /// Visits a [Commented] and returns the documentation comments associated
   /// with the [element].
   ///
   /// If the comments are empty `null` will be returned.
   ast.Comment visitCommented(Commented element);
 
-  /// Visits a [Annotated] and returns the annotations associated with the
-  /// [element].
-  ///
-  /// If the element is not annotated then an empty list will be returned.
-  List<ast.Annotation> visitAnnotated(Annotated element);
+
+  /// Visits a [LibraryElement] and returns the compilation unit associated
+  /// with the [element].
+  ast.CompilationUnit visitLibraryElement(LibraryElement element);
 }

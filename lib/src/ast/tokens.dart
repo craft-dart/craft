@@ -11,11 +11,18 @@
 // ignore_for_file: implementation_imports
 
 import 'package:analyzer/dart/ast/token.dart';
-import 'package:analyzer/src/dart/ast/token.dart' show StringToken;
+import 'package:analyzer/src/dart/ast/token.dart'
+    show KeywordToken, StringToken;
 
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
+
+/// A `library` token.
+final Token $library = new KeywordToken(Keyword.LIBRARY, 0);
+
+/// A `;` token.
+final Token $semicolon = new Token(TokenType.SEMICOLON, 0);
 
 /// Creates a token from the string [value].
 ///
