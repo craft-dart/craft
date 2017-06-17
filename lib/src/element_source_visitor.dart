@@ -22,12 +22,15 @@ abstract class ElementSourceVisitor {
   /// If the element is not annotated then an empty list will be returned.
   List<ast.Annotation> visitAnnotated(Annotated element);
 
+  /// Visits a [ClassElement] and returns the declaration associated with the
+  /// [element].
+  ast.ClassDeclaration visitClassElement(ClassElement element);
+
   /// Visits a [Commented] and returns the documentation comments associated
   /// with the [element].
   ///
   /// If the comments are empty `null` will be returned.
   ast.Comment visitCommented(Commented element);
-
 
   /// Visits a [LibraryElement] and returns the compilation unit associated
   /// with the [element].
