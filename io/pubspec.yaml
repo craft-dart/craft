@@ -1,0 +1,15 @@
+name: craft_io
+version: 0.1.0
+description: IO helpers for the Craft libraries.
+author: Don Olmstead <don.j.olmstead@gmail.com>
+homepage: http://craft-dart.github.io
+
+environment:
+  sdk: '>=1.22.0 <2.0.0'
+
+dependencies:
+  resource: ^2.1.2
+  yaml: ^2.1.12
+
+dev_dependencies:
+  test: ^0.12.0
