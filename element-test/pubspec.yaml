@@ -1,0 +1,16 @@
+name: craft_element_test
+version: 0.1.0
+description: Testing utilities for source code elements with the Craft libraries.
+author: Don Olmstead <don.j.olmstead@gmail.com>
+homepage: http://craft-dart.github.io
+
+environment:
+  sdk: '>=1.21.0-any <2.0.0'
+
+dependencies:
+  craft_element:
+    path: ../craft-element
+  craft_type:
+    path: ../craft-type
+  meta: ^1.0.4
+  test: ^0.12.19
