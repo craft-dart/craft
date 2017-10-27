@@ -1,0 +1,24 @@
+// Copyright (c) 2017 the Craft Project Authors.
+// Please see the AUTHORS file for details. All rights reserved.
+// Use of this source code is governed by a zlib license that can be found in
+// the LICENSE file.
+
+//---------------------------------------------------------------------
+// Library contents
+//---------------------------------------------------------------------
+
+/// The type of parameter.
+enum ParameterKind {
+  /// The parameter is required.
+  required,
+
+  /// The parameter is positional.
+  ///
+  /// It uses the \[\] syntax when declared.
+  positional,
+
+  /// The parameter is named.
+  ///
+  /// It uses the {} syntax when declared.
+  named
+}
