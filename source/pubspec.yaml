@@ -1,0 +1,16 @@
+name: craft_source
+version: 0.1.0
+description: Code generation for the Craft libraries.
+author: Don Olmstead <don.j.olmstead@gmail.com>
+homepage: http://craft-dart.github.io
+
+environment:
+  sdk: '>=1.21.0 <2.0.0'
+
+dependencies:
+  analyzer: ^0.30.0
+  craft_type:
+    path: ../craft-type
+  craft_element:
+    path: ../craft-element
+  meta: ^1.0.4
